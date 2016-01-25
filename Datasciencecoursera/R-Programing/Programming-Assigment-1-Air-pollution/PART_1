@@ -21,7 +21,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {   ## 1:332 son el 
     return(mean(data, na.rm = TRUE))
 }
 
-##ENUNCIADO
+##ENUNCIADO: Función que nos haga la media de una columna en un archivo entre otros.
 ##Introduction
 
 ##For this first programming assignment you will write three functions that are meant to interact with dataset that accompanies this assignment. The dataset is contained in a zip file specdata.zip that you can download from the Coursera web site.
