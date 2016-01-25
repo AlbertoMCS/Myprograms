@@ -9,7 +9,7 @@ complete <- function(directory, id = 1:332) {
     nobs = numeric()
     for (i in id) {
 
-        newRead = read.csv(paste(directory, "/", formatC(i, width = 3, flag = "0"), 
+        newRead = read.csv(paste(directory, "/", formatC(i, width = 3, flag = "0"),   ## La funcion formatC nos pone el numero 1 en 001, para que coincida con el nombre de los archivos
             ".csv", sep = ""))
         nobs = c(nobs, sum(complete.cases(newRead)))
     }
