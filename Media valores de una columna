@@ -1,0 +1,21 @@
+## Hacer la media de las columnas de una matriz (o archivo csv por ejemplo)
+columnmean <- function(y){ ## Columnmean va a ser funcion de y, y en este caso es una matriz o data frame...
+nc <- ncol(y) ## Llamamos nc al numero de columnas que tenga la matriz que elijamos, si y asupiesemos la matriz esto no seria necesario pero vamos a hacerlo para cualquier matriz
+means <- numeric(nc) ## definimos un vector donde almacemnar las medias de cada columna para despues ensenarlo en la salida
+for(i in 1:nc) { ## Para i= 1, 2, 3....nc
+  means[i] <- mean(y[, i]) ## Cada hueco del vector definido sera igual a la media de la matriz (y) en todas las filas y en la columna i.
+}
+means ## Que de como resultado visible el vector que hemos definido para almacenar esta informacion.
+}
+## Esta es la salida:
+## [1]        NA        NA  9.957516 77.882353  6.993464 15.803922
+## Como vemos hay dos NA, si queremos borrar esas NA de las columnas anadiriamos lo siguiente:
+
+columnmean <- function(y, removeNA = TRUE) {
+  nc <- ncol(y) 
+  means <- numeric(nc)
+  for(i in 1:nc) { 
+    means[i] <- mean(y[, i], na.rm = removeNA) 
+  }
+  means 
+}
